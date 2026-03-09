@@ -15,13 +15,14 @@ O roteiro está dividido em blocos. Cada bloco está em um arquivo na pasta [`ro
 | 2 | O que é o Cursor? (3–4 min) | [02-o-que-e-cursor.md](roteiro/02-o-que-e-cursor.md) |
 | 3 | Instalação e Configuração Inicial (5–7 min) | [03-instalacao-configuracao.md](roteiro/03-instalacao-configuracao.md) |
 | 4 | MCP: O Superpoder do Cursor (6–8 min) | [04-mcp.md](roteiro/04-mcp.md) |
-| 5 | Skills e Prompts para Delphi (5–6 min) | [05-skills-prompts-delphi.md](roteiro/05-skills-prompts-delphi.md) |
-| 6 | O PROJETO: Leitura de XML de NF-e (10–12 min) | [06-projeto-xml-nfe.md](roteiro/06-projeto-xml-nfe.md) |
-| 7 | Gerando os Formulários (8–10 min) | [07-gerando-formularios.md](roteiro/07-gerando-formularios.md) |
-| 8 | Dicas Práticas e Armadilhas (3–4 min) | [08-dicas-armadilhas.md](roteiro/08-dicas-armadilhas.md) |
-| 9 | Encerramento (1–2 min) | [09-encerramento.md](roteiro/09-encerramento.md) |
-| — | Tempo total estimado | [10-tempo-total.md](roteiro/10-tempo-total.md) |
-| — | Dicas de produção | [11-dicas-producao.md](roteiro/11-dicas-producao.md) |
-| — | Nota final | [12-final.md](roteiro/12-final.md) |
+| 5 | Rules e Guidelines (4–5 min) | [05-rules-guidelines.md](roteiro/05-rules-guidelines.md) |
+| 6 | Skills e Prompts para Delphi (5–6 min) | [06-skills-prompts-delphi.md](roteiro/06-skills-prompts-delphi.md) |
+| 7 | O PROJETO: Leitura de XML de NF-e (10–12 min) | [07-projeto-xml-nfe.md](roteiro/07-projeto-xml-nfe.md) |
+| 8 | Gerando os Formulários (8–10 min) | [08-gerando-formularios.md](roteiro/08-gerando-formularios.md) |
+| 9 | Dicas Práticas e Armadilhas (3–4 min) | [09-dicas-armadilhas.md](roteiro/09-dicas-armadilhas.md) |
+| 10 | Encerramento (1–2 min) | [10-encerramento.md](roteiro/10-encerramento.md) |
+| — | Tempo total estimado | [11-tempo-total.md](roteiro/11-tempo-total.md) |
+| — | Dicas de produção | [12-dicas-producao.md](roteiro/12-dicas-producao.md) |
+| — | Nota final | [13-final.md](roteiro/13-final.md) |
 
 **⏱️ Tempo total:** 45–55 minutos

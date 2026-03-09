@@ -1,6 +1,6 @@
 # 🎯 DICAS DE PRODUÇÃO
 
-[← Tempo total](10-tempo-total.md) | **[Índice](../README.md)** | [Próximo: Nota final →](12-final.md)
+[← Tempo total](11-tempo-total.md) | **[Índice](../README.md)** | [Próximo: Nota final →](13-final.md)
 
 ---
 
@@ -14,4 +14,4 @@
 
 ---
 
-[← Tempo total](10-tempo-total.md) | **[Índice](../README.md)** | [Próximo: Nota final →](12-final.md)
+[← Tempo total](11-tempo-total.md) | **[Índice](../README.md)** | [Próximo: Nota final →](13-final.md)

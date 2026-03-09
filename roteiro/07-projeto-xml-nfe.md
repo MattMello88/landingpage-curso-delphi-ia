@@ -1,6 +1,6 @@
-# BLOCO 6 — O PROJETO: Leitura de XML de NF-e (10–12 min)
+# BLOCO 7 — O PROJETO: Leitura de XML de NF-e (10–12 min)
 
-[← Bloco 5 — Skills e Prompts](05-skills-prompts-delphi.md) | **[Índice](../README.md)** | [Próximo: Bloco 7 — Formulários →](07-gerando-formularios.md)
+[← Bloco 6 — Skills e Prompts](06-skills-prompts-delphi.md) | **[Índice](../README.md)** | [Próximo: Bloco 8 — Formulários →](08-gerando-formularios.md)
 
 ---
 
@@ -25,4 +25,4 @@
 
 ---
 
-[← Bloco 5 — Skills e Prompts](05-skills-prompts-delphi.md) | **[Índice](../README.md)** | [Próximo: Bloco 7 — Formulários →](07-gerando-formularios.md)
+[← Bloco 6 — Skills e Prompts](06-skills-prompts-delphi.md) | **[Índice](../README.md)** | [Próximo: Bloco 8 — Formulários →](08-gerando-formularios.md)

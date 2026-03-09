@@ -1,6 +1,6 @@
-# BLOCO 7 — Gerando os Formulários (8–10 min)
+# BLOCO 8 — Gerando os Formulários (8–10 min)
 
-[← Bloco 6 — Projeto XML NF-e](06-projeto-xml-nfe.md) | **[Índice](../README.md)** | [Próximo: Bloco 8 — Dicas e Armadilhas →](08-dicas-armadilhas.md)
+[← Bloco 7 — Projeto XML NF-e](07-projeto-xml-nfe.md) | **[Índice](../README.md)** | [Próximo: Bloco 9 — Dicas e Armadilhas →](09-dicas-armadilhas.md)
 
 ---
 
@@ -13,4 +13,4 @@
 
 ---
 
-[← Bloco 6 — Projeto XML NF-e](06-projeto-xml-nfe.md) | **[Índice](../README.md)** | [Próximo: Bloco 8 — Dicas e Armadilhas →](08-dicas-armadilhas.md)
+[← Bloco 7 — Projeto XML NF-e](07-projeto-xml-nfe.md) | **[Índice](../README.md)** | [Próximo: Bloco 9 — Dicas e Armadilhas →](09-dicas-armadilhas.md)

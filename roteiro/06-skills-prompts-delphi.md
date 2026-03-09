@@ -1,6 +1,6 @@
-# BLOCO 5 — Skills e Prompts para Delphi (5–6 min)
+# BLOCO 6 — Skills e Prompts para Delphi (5–6 min)
 
-[← Bloco 4 — MCP](04-mcp.md) | **[Índice](../README.md)** | [Próximo: Bloco 6 — Projeto XML NF-e →](06-projeto-xml-nfe.md)
+[← Bloco 5 — Rules e Guidelines](05-rules-guidelines.md) | **[Índice](../README.md)** | [Próximo: Bloco 7 — Projeto XML NF-e →](07-projeto-xml-nfe.md)
 
 ---
 
@@ -18,4 +18,4 @@
 
 ---
 
-[← Bloco 4 — MCP](04-mcp.md) | **[Índice](../README.md)** | [Próximo: Bloco 6 — Projeto XML NF-e →](06-projeto-xml-nfe.md)
+[← Bloco 5 — Rules e Guidelines](05-rules-guidelines.md) | **[Índice](../README.md)** | [Próximo: Bloco 7 — Projeto XML NF-e →](07-projeto-xml-nfe.md)

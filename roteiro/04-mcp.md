@@ -1,6 +1,6 @@
 # BLOCO 4 — MCP: O Superpoder do Cursor (6–8 min)
 
-[← Bloco 3 — Instalação](03-instalacao-configuracao.md) | **[Índice](../README.md)** | [Próximo: Bloco 5 — Skills e Prompts →](05-skills-prompts-delphi.md)
+[← Bloco 3 — Instalação](03-instalacao-configuracao.md) | **[Índice](../README.md)** | [Próximo: Bloco 5 — Rules e Guidelines →](05-rules-guidelines.md)
 
 ---
 
@@ -12,46 +12,93 @@
 
 > *"É como dar 'ferramentas extras' para a IA — ela deixa de só falar e começa a agir"*
 
-- **Exemplos do que o MCP permite:** ler/escrever arquivos, executar comandos no terminal, **acessar banco de dados**, buscar na web, etc.
-- No curso usamos um MCP real: **MySQL** — a IA passa a poder consultar o banco (listar bancos/tabelas, ver esquema, executar SELECT).
-- O MCP usa o **cliente MySQL** para Node.js (`mysql2`) para falar com o servidor MySQL/MariaDB.
+- **Exemplos do que o MCP permite:** ler/escrever arquivos, executar comandos no terminal, acessar banco de dados, buscar na web, etc.
+- Dois exemplos práticos que usamos aqui:
+  1. **Filesystem** — a IA pode ler arquivos e documentação em pastas que você permite (ideal para docs, specs, código).
+  2. **MySQL** — a IA passa a poder consultar o banco (listar bancos/tabelas, ver esquema, executar SELECT).
 
 ---
 
-### Exemplo real completo: MCP MySQL
+### Exemplo 1: MCP Filesystem (ler arquivos e documentação)
 
-Este repositório já traz um exemplo pronto em [`.cursor/mcp.json`](../.cursor/mcp.json).
+O MCP **Filesystem** permite que a IA leia e escreva arquivos em pastas que você liberar. É muito útil para:
+- Ler a documentação do projeto
+- Ler arquivos de configuração
+- Acessar especificações, roteiros e notas
 
-**Pré-requisitos:** ter **Node.js** (já traz o `npx`), **MySQL** ou **MariaDB** instalado e um banco criado (ex.: `cursor_demo`).
-
----
-
-### E quem não tem npx?
-
-O `npx` vem junto com o **Node.js**. Quem não tem:
-
-1. **Instalar o Node.js** (recomendado para este curso):
-   - Acesse [nodejs.org](https://nodejs.org) e baixe a versão **LTS**.
-   - Instale no Windows (Next até concluir). Marque a opção de adicionar ao PATH se aparecer.
-   - Abra um **novo** terminal (PowerShell ou CMD) e teste: `npx --version`. Se aparecer um número, está pronto.
-2. **Sem instalar Node.js:** o MCP de MySQL que usamos aqui **depende de Node/npx**. Nesse caso você pode:
-   - Pular a parte de MCP de banco na prática e acompanhar só a explicação; ou
-   - Usar outro MCP que não exija Node (por exemplo, alguns MCPs rodam via Docker ou executável — ver documentação de cada um).
-
-**Resumo:** para rodar o exemplo deste bloco, instale o Node.js; o `npx` já vem incluso.
+**Pré-requisito:** ter **Node.js** instalado (já traz o `npx`).
 
 ---
 
-**1. Onde fica o arquivo**
+**1. Configurar o MCP Filesystem**
 
-- No **projeto:** `.cursor/mcp.json` (na raiz do repositório).
-- A conexão é feita por **variáveis de ambiente** (`env`), então a senha não precisa ficar na connection string no Git.
-
-**2. Conteúdo do arquivo (exemplo que está no projeto)**
+Edite o arquivo `.cursor/mcp.json` (na raiz do projeto) e adicione o servidor:
 
 ```json
 {
   "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\seu_usuario\\source\\github\\seu_projeto",
+        "C:\\caminho\\para\\documentacao"
+      ]
+    }
+  }
+}
+```
+
+- **O que faz:** cada caminho nos `args` é uma pasta permitida. A IA só pode ler/escrever dentro dessas pastas.
+- **Windows:** use barras duplas `\\` ou barras normais `/`. Exemplo: `C:/Users/joao/projetos/curso-delphi`.
+- **Dica:** inclua a raiz do seu projeto e pastas onde ficam docs, specs ou manuais que a IA deve poder ler.
+
+**2. Ferramentas disponíveis no MCP Filesystem**
+
+| Ferramenta | Descrição |
+|------------|-----------|
+| `read_file` | Lê o conteúdo completo de um arquivo |
+| `read_multiple_files` | Lê vários arquivos de uma vez (útil para comparar) |
+| `list_directory` | Lista arquivos e pastas de um diretório |
+| `directory_tree` | Mostra a árvore de arquivos em JSON |
+| `search_files` | Busca arquivos por padrão (nome, extensão) |
+| `get_file_info` | Informações do arquivo (tamanho, datas) |
+
+**3. Reiniciar o Cursor**
+
+- Feche o Cursor **por completo** e abra de novo (alterações no `mcp.json` só valem após reiniciar).
+
+**4. Testar no chat**
+
+Com o MCP ativo, abra o **Chat** (ou Composer) e teste:
+
+| Objetivo | Prompt para colar no chat |
+|----------|---------------------------|
+| Ler documentação | *"Leia o conteúdo do arquivo README.md do projeto usando o MCP Filesystem."* |
+| Listar pastas | *"Liste os arquivos da pasta roteiro usando o MCP."* |
+| Buscar arquivos | *"Busque todos os arquivos .md no projeto."* |
+| Ler roteiro | *"Leia o roteiro 03-instalacao-configuracao.md e me resuma o conteúdo."* |
+
+- A IA usará `read_file`, `list_directory` ou `search_files` para acessar os arquivos que você permitiu.
+
+---
+
+### Exemplo 2: MCP MySQL (consultar banco de dados)
+
+Se você tiver **MySQL** ou **MariaDB** instalado, pode adicionar o MCP MySQL no mesmo `mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:\\Users\\seu_usuario\\source\\github\\seu_projeto"
+      ]
+    },
     "mysql": {
       "command": "npx",
       "args": ["-y", "mysql-mcp-server"],
@@ -67,75 +114,40 @@ O `npx` vem junto com o **Node.js**. Quem não tem:
 }
 ```
 
-- **O que isso faz:** sobe o servidor MCP **mysql-mcp-server** com `npx` e conecta no MySQL usando o cliente **mysql2** (driver oficial para Node.js).
-- **Variáveis de ambiente:** `MYSQL_HOST`, `MYSQL_PORT`, `MYSQL_USER`, `MYSQL_PASSWORD`, `MYSQL_DATABASE` — ajuste com seus dados. Para não commitar a senha, use um arquivo local (ex.: copiar para `.cursor/mcp.local.json` e não versionar) ou preencher só na sua máquina.
-- **Somente leitura:** esse MCP aceita apenas SELECT, SHOW, DESCRIBE e EXPLAIN (seguro para uso com a IA).
+**Ferramentas do MySQL:** `list_databases`, `list_tables`, `describe_table`, `execute_query` (somente leitura).
 
-**Ferramentas disponíveis no MCP:**
-
-| Ferramenta | Descrição |
-|------------|-----------|
-| `list_databases` | Lista os bancos acessíveis no servidor MySQL |
-| `list_tables` | Lista as tabelas de um banco |
-| `describe_table` | Mostra o esquema (colunas e tipos) de uma tabela |
-| `execute_query` | Executa uma query SQL read-only (SELECT, SHOW, etc.) |
-
-**3. Reiniciar o Cursor**
-
-- Feche o Cursor **por completo** e abra de novo (alterações no `mcp.json` só valem após reiniciar).
-
-**4. Conferir se o MCP está ativo**
-
-- **Cursor Settings** (Ctrl+,) → **Features** ou **Tools & MCP** → conferir se o servidor `mysql` aparece e está ligado.
+**Prompts de teste:** *"Liste os bancos de dados"*, *"Quais tabelas existem no banco cursor_demo?"*, *"Execute um SELECT em uma tabela."*
 
 ---
 
-### Testar o MCP no chat (prática)
+### E quem não tem npx?
 
-Com o MCP ativo, abra o **Chat** (ou Composer) e teste com prompts como:
+O `npx` vem junto com o **Node.js**. Quem não tem:
 
-| Objetivo | Prompt para colar no chat |
-|----------|---------------------------|
-| Listar bancos | *"Liste os bancos de dados disponíveis no MySQL usando o MCP."* |
-| Listar tabelas | *"Quais tabelas existem no banco cursor_demo? Use as ferramentas do MCP."* |
-| Ver esquema | *"Descreva o esquema da tabela X (colunas e tipos) usando o MCP de MySQL."* |
-| Consultar dados | *"Execute um SELECT em uma tabela do banco e me mostre o resultado."* |
+1. **Instalar o Node.js** (recomendado para este curso):
+   - Acesse [nodejs.org](https://nodejs.org) e baixe a versão **LTS**.
+   - Instale no Windows (Next até concluir). Marque a opção de adicionar ao PATH se aparecer.
+   - Abra um **novo** terminal e teste: `npx --version`. Se aparecer um número, está pronto.
+2. **Sem Node.js:** o MCP Filesystem e o MySQL que usamos **dependem de Node/npx**. Você pode pular a prática e acompanhar só a explicação, ou usar outros MCPs que rodem via Docker/executável (ver documentação de cada um).
 
-- A IA deve usar as **ferramentas** do MCP (`list_databases`, `list_tables`, `describe_table`, `execute_query`) e mostrar o resultado.
-- Se não conectar: confira MySQL rodando, usuário/senha em `env`, Cursor reiniciado e MCP ligado nas Settings.
+**Resumo:** para rodar os exemplos deste bloco, instale o Node.js; o `npx` já vem incluso.
 
 ---
 
-### Alternativa: PostgreSQL ou SQLite
+### Conferir se o MCP está ativo
 
-Se quiser usar **PostgreSQL**, troque pelo MCP oficial:
-
-```json
-"postgres": {
-  "command": "npx",
-  "args": ["-y", "@modelcontextprotocol/server-postgres", "postgresql://usuario:senha@localhost:5432/banco"]
-}
-```
-
-Para **SQLite** (arquivo `.db`, sem servidor):
-
-```json
-"sqlite": {
-  "command": "npx",
-  "args": ["-y", "mcp-sqlite", "C:\\caminho\\para\\arquivo.db"]
-}
-```
+- **Cursor Settings** (Ctrl+,) → **Features** ou **Tools & MCP** → conferir se os servidores aparecem e estão ligados.
 
 ---
 
 ### Resumo para a gravação
 
 1. Explicar MCP em uma frase (ferramentas extras para a IA).
-2. Mostrar o arquivo `.cursor/mcp.json` do projeto com o exemplo **MySQL** e o uso do cliente (mysql2 via variáveis de ambiente).
-3. Explicar as variáveis `env` (host, porta, usuário, senha, banco) e as ferramentas (list_databases, list_tables, describe_table, execute_query).
-4. Reiniciar o Cursor e checar Settings → MCP.
-5. No chat, pedir para listar bancos/tabelas ou rodar um SELECT e mostrar o resultado.
+2. Mostrar o MCP **Filesystem** primeiro: configurar no `mcp.json` com os caminhos das pastas permitidas, explicar `read_file` e `list_directory`.
+3. Mostrar como usar no chat: pedir para ler um README, listar arquivos ou buscar documentação.
+4. Opcional: mostrar o MCP MySQL para quem quer consultar banco.
+5. Reiniciar o Cursor e checar Settings → MCP.
 
 ---
 
-[← Bloco 3 — Instalação](03-instalacao-configuracao.md) | **[Índice](../README.md)** | [Próximo: Bloco 5 — Skills e Prompts →](05-skills-prompts-delphi.md)
+[← Bloco 3 — Instalação](03-instalacao-configuracao.md) | **[Índice](../README.md)** | [Próximo: Bloco 5 — Rules e Guidelines →](05-rules-guidelines.md)

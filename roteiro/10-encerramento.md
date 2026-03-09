@@ -1,6 +1,6 @@
-# BLOCO 9 — Encerramento (1–2 min)
+# BLOCO 10 — Encerramento (1–2 min)
 
-[← Bloco 8 — Dicas e Armadilhas](08-dicas-armadilhas.md) | **[Índice](../README.md)** | [Próximo: Tempo total →](10-tempo-total.md)
+[← Bloco 9 — Dicas e Armadilhas](09-dicas-armadilhas.md) | **[Índice](../README.md)** | [Próximo: Tempo total →](11-tempo-total.md)
 
 ---
 
@@ -13,4 +13,4 @@
 
 ---
 
-[← Bloco 8 — Dicas e Armadilhas](08-dicas-armadilhas.md) | **[Índice](../README.md)** | [Próximo: Tempo total →](10-tempo-total.md)
+[← Bloco 9 — Dicas e Armadilhas](09-dicas-armadilhas.md) | **[Índice](../README.md)** | [Próximo: Tempo total →](11-tempo-total.md)

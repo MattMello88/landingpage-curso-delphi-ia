@@ -1,6 +1,6 @@
-# BLOCO 8 — Dicas Práticas e Armadilhas (3–4 min)
+# BLOCO 9 — Dicas Práticas e Armadilhas (3–4 min)
 
-[← Bloco 7 — Formulários](07-gerando-formularios.md) | **[Índice](../README.md)** | [Próximo: Bloco 9 — Encerramento →](09-encerramento.md)
+[← Bloco 8 — Formulários](08-gerando-formularios.md) | **[Índice](../README.md)** | [Próximo: Bloco 10 — Encerramento →](10-encerramento.md)
 
 ---
 
@@ -14,4 +14,4 @@
 
 ---
 
-[← Bloco 7 — Formulários](07-gerando-formularios.md) | **[Índice](../README.md)** | [Próximo: Bloco 9 — Encerramento →](09-encerramento.md)
+[← Bloco 8 — Formulários](08-gerando-formularios.md) | **[Índice](../README.md)** | [Próximo: Bloco 10 — Encerramento →](10-encerramento.md)

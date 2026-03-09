@@ -1,5 +1,13 @@
 {
   "mcpServers": {
+    "filesystem-projeto-delphi": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "C:/Users/mathe/Desktop/Aula IA/Projeto Delphi"
+      ]
+    },
     "mysql": {
       "command": "npx",
       "args": ["-y", "mysql-mcp-server"],
