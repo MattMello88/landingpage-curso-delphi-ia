@@ -1,0 +1,16 @@
+---
+description: Uso do componente Excel para exportar/importar (FlexCel, TMS etc.)
+globs: "**/*.pas,**/*.dpr"
+alwaysApply: false
+---
+
+# Uso do componente Excel (exportar/importar)
+
+- **Objetivo:** exportar grid/dados para Excel ou ler planilha sem depender de OLE Automation; usar componente de terceiros (FlexCel, TMS ou similar).
+- **Boas práticas:**
+  - Não deixar processo do Excel aberto em background: abrir, gerar/ler arquivo, fechar e liberar objeto.
+  - Preferir gerar arquivo .xlsx em disco e abrir no Excel (ou informar caminho ao usuário) em vez de controlar a aplicação Excel via OLE.
+  - Em imports: validar colunas esperadas, tratar erros de célula vazia ou tipo e logar linhas com problema.
+- **Exportar grid:** percorrer `DataSet` ou linhas do grid, escrever linha a linha; na primeira linha, escrever cabeçalhos (nomes dos campos ou do grid).
+
+**Regra:** Ao usar componente Excel: abrir conexão/arquivo, executar leitura ou gravação e fechar/liberar em seguida. Em exportação, primeira linha = cabeçalhos. Em importação, validar colunas e registrar linhas com erro.

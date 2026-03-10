@@ -1,0 +1,22 @@
+---
+description: Padrão de nomenclatura para código Delphi (formulários, units, controles, datasets)
+globs: "**/*.pas,**/*.dpr"
+alwaysApply: false
+---
+
+# Nomenclatura Delphi
+
+No Delphi, siga estes prefixos e padrões:
+
+| Elemento | Padrão | Exemplo |
+|----------|--------|---------|
+| Formulários | `Tfrm` + nome descritivo | `TfrmCliente`, `TfrmProduto` |
+| DataModules | `Tdm` + nome | `TdmPrincipal`, `TdmVendas` |
+| Units | prefixo do tipo + nome | `uFrmCliente`, `uDmPrincipal` |
+| Classes de negócio | `T` + nome singular | `TCliente`, `TPedido` |
+| Botões | `btn` + ação | `btnSalvar`, `btnCancelar` |
+| Edits | `ed` + nome do campo | `edNome`, `edEmail` |
+| Labels | `lbl` + nome | `lblNome`, `lblCodigo` |
+| Queries/Datasets | `qry` / `ds` + nome | `qryCliente`, `dsCliente` |
+
+Resumo: use **Tfrm** para formulários, **Tdm** para DataModules, prefixos **btn/ed/lbl** para controles e **qry/ds** para queries e datasources.

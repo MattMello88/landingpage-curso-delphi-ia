@@ -6,6 +6,8 @@
 
 **Objetivo:** Coração do vídeo — aplicação real
 
+> 📋 **Prompts prontos:** Use o arquivo [prompt-projeto-delphi-xml-nfe.md](prompt-projeto-delphi-xml-nfe.md) para copiar prompts completos (análise XML, DDL, importação, formulários).
+
 ## Parte 6a — Analisando o XML
 - Abrir um XML de NF-e real (ou de exemplo público)
 - Conversar com o Cursor: *"Analise esse XML e me liste os grupos de tags e seus atributos"*

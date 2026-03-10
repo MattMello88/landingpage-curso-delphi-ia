@@ -1,0 +1,14 @@
+---
+description: Cadastro pai e filho (mestre-detalhe) com TfrmCadastroMestreDetalhe
+globs: "**/*.pas,**/*.dpr"
+alwaysApply: false
+---
+
+# Cadastro mestre-detalhe (pai e filho)
+
+- **Estrutura:** formulário com dois grids (mestre e detalhe), ex.: Cliente (pai) e Contatos do cliente (filho).
+- **Ancestral:** `TfrmCadastroMestreDetalhe` herdando de `TfrmCadastroBase`, com dois `DataSource` (pai e filho), `MasterSource`/`MasterFields` no dataset filho e botões Incluir/Excluir no detalhe.
+- **Uso:** usuário navega no mestre; o grid do filho mostra só os registros ligados ao registro atual do mestre. Incluir/Excluir no detalhe só afetam o filho.
+- **Nomenclatura:** datasets `qryMestre`/`qryDetalhe` ou `qryCliente`/`qryContato`; manter `MasterSource` e `MasterFields` configurados no filho.
+
+**Regra:** Em cadastros pai e filho, usar `TfrmCadastroMestreDetalhe`; configurar `MasterSource` e `MasterFields` no dataset filho; manter dois DataSource e não permitir filho órfão (sem mestre selecionado).

@@ -1,0 +1,14 @@
+---
+description: Boas práticas de criação, abertura e liberação de formulários Delphi
+globs: "**/*.pas,**/*.dpr"
+alwaysApply: false
+---
+
+# Uso da classe formulário (Delphi)
+
+- **Criar/abrir:** usar `Create(Application)` e `Show` ou `ShowModal`; não reutilizar instância solta.
+- **Liberar:** quem criou com `Create` deve chamar `Free` (ou usar `try/finally`); em `ShowModal`, dar `Free` após o `ShowModal` retornar.
+- **Passar dados:** preferir parâmetros no `Create` ou propriedades antes do `Show`, em vez de variáveis globais.
+- **Evitar:** `Application.CreateForm` para forms que não são a tela principal; preferir criação sob demanda.
+
+Formulários Delphi: criar com `Create(Application)`, usar `ShowModal` para telas modais e garantir `Free` após uso. Evitar `Application.CreateForm` para telas secundárias.

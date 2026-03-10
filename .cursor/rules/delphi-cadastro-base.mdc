@@ -1,0 +1,15 @@
+---
+description: Ancestral para cadastros simples (TfrmCadastroBase)
+globs: "**/*.pas,**/*.dpr"
+alwaysApply: false
+---
+
+# Cadastros simples (ancestral)
+
+- **Objetivo:** formulário base com toolbar (Incluir, Editar, Excluir, Gravar, Cancelar), grid, navegação e regras comuns.
+- **Nome:** `TfrmCadastroBase` (unit `uFrmCadastroBase`).
+- **O que o ancestral já traz:** botões de ação, `DataSource` + `DBGrid`, tratamento de modo (Inserção/Edição), `Abort` na validação.
+
+Para cadastro simples (ex.: Cadastro de Cidade): herdar de `TfrmCadastroBase`, definir `Caption`, conectar `TQuery`/`TTable` ao `DataSource`, e opcionalmente sobrescrever `ValidarAntesGravar` e `PosGravar`.
+
+**Regra:** Para cadastros simples, herdar de `TfrmCadastroBase`; definir apenas Caption, Dataset e validações específicas. Não duplicar lógica de toolbar e navegação.

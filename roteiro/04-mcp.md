@@ -52,7 +52,7 @@ Edite o arquivo `.cursor/mcp.json` (na raiz do projeto) e adicione o servidor:
 
 - **O que faz:** cada caminho nos `args` é uma pasta permitida. A IA só pode ler/escrever dentro dessas pastas.
 - **Windows:** use barras duplas `\\` ou barras normais `/`. Exemplo: `C:/Users/joao/projetos/curso-delphi`.
-- **Dica:** inclua a raiz do seu projeto e pastas onde ficam docs, specs ou manuais que a IA deve poder ler.
+- **Dica:** inclua a raiz do seu projeto, pastas onde ficam docs/specs/manuais e a **pasta que será o ancestral dos formulários Delphi** (ex: `C:/Projetos/MeuProjetoDelphi` ou pasta Forms).
 
 **2. Ferramentas disponíveis no MCP Filesystem**
 
@@ -77,6 +77,7 @@ Com o MCP ativo, abra o **Chat** (ou Composer) e teste:
 |----------|---------------------------|
 | Ler documentação | *"Leia o conteúdo do arquivo README.md do projeto usando o MCP Filesystem."* |
 | Listar pastas | *"Liste os arquivos da pasta roteiro usando o MCP."* |
+| **Ler pasta ancestral dos formulários Delphi** | *"Liste os arquivos da pasta que será o ancestral dos formulários do Delphi (ex: pasta Forms ou do Projeto Delphi) usando o MCP."* |
 | Buscar arquivos | *"Busque todos os arquivos .md no projeto."* |
 | Ler roteiro | *"Leia o roteiro 03-instalacao-configuracao.md e me resuma o conteúdo."* |
 
