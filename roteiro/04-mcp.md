@@ -1,4 +1,4 @@
-# BLOCO 4 — MCP: O Superpoder do Cursor (6–8 min)
+# BLOCO 4 — MCP - Model Context Protocol: O Superpoder do Cursor (6–8 min)
 
 [← Bloco 3 — Instalação](03-instalacao-configuracao.md) | **[Índice](../README.md)** | [Próximo: Bloco 5 — Rules e Guidelines →](05-rules-guidelines.md)
 
